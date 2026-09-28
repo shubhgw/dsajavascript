@@ -6,11 +6,11 @@ let givenArrayLength = givenArray.length
 // Method 1
 // let zerosArray = [];
 // let onesArray = [];
-// for(i=0;i<givenArrayLength;i++){
-//     if(givenArray[i]==0){
+// for (i = 0; i < givenArrayLength; i++) {
+//     if (givenArray[i] == 0) {
 //         zerosArray.push(givenArray[i])
 //     }
-//     else{
+//     else {
 //         onesArray.push(givenArray[i])
 //     }
 // }
@@ -18,16 +18,14 @@ let givenArrayLength = givenArray.length
 // let sortedArray = zerosArray.concat(onesArray);
 // console.log(sortedArray);
 
-// Method 2
+// Method 2 : in-place
+
+// 2 pointers i & j from 0 ; if i = 0 just swap them & do i++,j++ , if i=1;i++ only ( samzo bhai thodasa :( )
 
 let j = 0;
-for(i=0;i<givenArrayLength;i++){
+for (i = 0; i < givenArrayLength; i++) {
     if(givenArray[i]==0){
-        continue
-    }
-    else{
-        j = givenArray[i]
-        givenArray[i]=0;
+        [givenArray[i],givenArray[j]]=[givenArray[j],givenArray[i]] // just swapping them
         j++
     }
 }
